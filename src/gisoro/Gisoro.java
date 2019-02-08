@@ -19,8 +19,8 @@ public class Gisoro {
     public static void main(String[] args) {
         Boards boards = new Boards();
         System.out.println("Gutangira ...");
-        Player playerA = new Player(boards.boardA, "A");
-        Player playerB = new Player(boards.boardB, "B");
+        Player playerA = new Player(boards.boardA, boards.boardB, "A");
+        Player playerB = new Player(boards.boardB, boards.boardA, "B");
         
         //Play until one winns ...
         System.out.println("A B kuvuno ...");
@@ -30,9 +30,13 @@ public class Gisoro {
         playerA.play();
         playerB.play();
         System.out.println("A B Gukina ...");
-        while(playerA.win || playerB.win){
+        while(playerA.win && playerB.win){
             playerA.play();
             playerB.play();
         }
+        if(!playerA.win)
+            System.out.println("Player "+ playerB.name + " wins!");
+        else
+            System.out.println("Player " + playerA.name + " wins!");
     }
 }

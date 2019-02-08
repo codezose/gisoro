@@ -64,7 +64,8 @@ public class Board {
     public void printBoard(){
         System.out.print(getName()+": ");
         for(int i=0;i<this.SIZE;i++){
-            System.out.print("("+board[i].getName()+ ", " + String.valueOf(board[i].getSize())+")\t");
+            System.out.print(String.valueOf(board[i].getSize())+"\t");
+//            System.out.print("("+board[i].getName()+ ", " + String.valueOf(board[i].getSize())+")\t");
         }
         System.out.println("");
     } 
